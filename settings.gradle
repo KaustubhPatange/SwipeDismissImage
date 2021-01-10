@@ -1,0 +1,3 @@
+include ':dismissimage'
+include ':sample'
+rootProject.name = "SwipeDismissibleImage"
