@@ -9,7 +9,7 @@ A custom activity for Android to display image with features like swipe to dismi
 
 TL;DR... It all started when I got curious how gestures (specifically dragging) are implementated in Android. Looking at the source code of certain libraries which responds to such touch events, I was keen that I had to make something to learn/practice (curious ;)).
 
-So I started making an activity which will show image which various features despite not unique, (considering various alternatives) but I had to learn it. So anyways, after it become solid (IMO) I made it as a library. There is still improvements which I'll keep working as I improve my knowledge and will find some time.
+So I started making an activity which will show image which various features despite not unique, (considering various alternatives) but I had to learn it. So anyways, after it become solid (IMO) I made it as a library. There are still some improvements needed which I'll keep on working as I improve my knowledge.
 
 ## Usage
 
