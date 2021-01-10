@@ -20,4 +20,4 @@ jobs:
       - run: chmod +x gradlew
       - run: chmod -R 777 ./
       - name: Building project
-        run: ./gradlew realtime-ktx:assembleDebug
+        run: ./gradlew dismiss-image:assembleDebug
