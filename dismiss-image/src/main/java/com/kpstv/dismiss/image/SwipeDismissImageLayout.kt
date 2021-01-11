@@ -225,8 +225,9 @@ class SwipeDismissImageLayout @JvmOverloads constructor(
 
         if (rectLocal.left == 0 && rectLocal.top == 0) {
             isScaling = true
+            lastScaleFactor = 2f
             pointer2.lastScaleFactor = lastScaleFactor
-            rootImageView.scale(3f, true)
+            rootImageView.scale(1 + lastScaleFactor, true)
         } else {
             isScaling = false
             val transX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, 0f)
