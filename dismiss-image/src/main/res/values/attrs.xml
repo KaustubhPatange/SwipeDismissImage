@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SwipeDismissLayout">
-        <attr name="dragEnabled" format="boolean" />
+    <declare-styleable name="SwipeDismissImageLayout">
+        <attr name="swipeDismissEnabled" format="boolean" />
         <attr name="affectOpacity" format="boolean" />
-        <attr name="swipeDistance" format="dimension" />
+        <attr name="swipeOffsetDistance" format="dimension" />
+        <attr name="android:drawable" format="reference"/>
+        <attr name="rootBackground" format="reference"/>
+        <attr name="imageTransitionName" format="string"/>
     </declare-styleable>
 </resources>

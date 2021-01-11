@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.util.TypedValue
 import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.core.animation.addListener
@@ -20,7 +21,12 @@ internal fun View.modifyOpacity(factor: Float, animate: Boolean = false) {
     alpha = factor
 }
 
-internal fun View.translate(x: Float, y: Float, animate: Boolean = false, onAnimationEnd: () -> Unit = {}) {
+internal fun View.translate(
+    x: Float,
+    y: Float,
+    animate: Boolean = false,
+    onAnimationEnd: () -> Unit = {}
+) {
     if (animate) {
         val transX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, x)
         val transY = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, y)
@@ -36,6 +42,23 @@ internal fun View.translate(x: Float, y: Float, animate: Boolean = false, onAnim
     this.translationY = y
 }
 
+internal fun View.scale(factor: Float, animate: Boolean = false) {
+    if (animate) {
+        ObjectAnimator.ofPropertyValuesHolder(
+            this,
+            PropertyValuesHolder.ofFloat(View.SCALE_X, factor),
+            PropertyValuesHolder.ofFloat(View.SCALE_Y, factor)
+        ).apply { duration = 200 }.start()
+        return
+    }
+    this.scaleX = factor
+    this.scaleY = factor
+}
+
 internal fun Context.drawableFrom(@DrawableRes resId: Int): Drawable? {
     return ContextCompat.getDrawable(this, resId)
+}
+
+internal fun Int.dp(context: Context): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), context.resources.displayMetrics)
 }
